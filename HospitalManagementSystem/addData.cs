@@ -93,8 +93,9 @@ namespace HospitalManagementSystem
                     hello["id"] = Id.Text;
                     thisRow["doc_name"] = em_name.Text;
                     hello["name"] = em_name.Text;
-                    thisRow["designation"] = Designation.Text;
-                    hello["position"] = position.Text;
+                    thisRow["appointment_time"] = textBox1.Text;
+                        thisRow["doc_des"] = Designation.Text;
+                        hello["position"] = position.Text;
                     thisRow["ward_no"] = ward_no.Text;
                     thisRow["duty_time"] = DutyTime.Text;
                     hello["join_date"] = dateTimePicker1.Text;

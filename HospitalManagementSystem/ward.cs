@@ -111,7 +111,7 @@ namespace HospitalManagementSystem
 
             OracleDataReader thisReader = thisCommand.ExecuteReader();
 
-            while (thisReader.Read())
+            while (thisReader.Read() )
             {
 
                 string cmd1 = thisReader["total_bed"].ToString();
@@ -121,10 +121,11 @@ namespace HospitalManagementSystem
                 int text = Convert.ToInt32(textBox2.Text);
                 result = (text - cc) + cc2;
                 res = result.ToString();
-                if (cmd2!="0")
+                if (cc2!=0 || Convert.ToInt32(textBox3.Text) !=0)
                 {
+
                     thisCommand.CommandText =
-            "update ward_allocation set  empty_ward = ward_no ";
+            "update ward_allocation set  empty_ward = ward_no where ward_no= '" + textBox3.Text + "'";
 
                     OracleDataReader thisReader2 = thisCommand.ExecuteReader();
                 }

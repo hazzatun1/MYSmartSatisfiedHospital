@@ -116,7 +116,7 @@
             this.ward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.ward.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ward.ForeColor = System.Drawing.Color.White;
-            this.ward.Location = new System.Drawing.Point(-79, -126);
+            this.ward.Location = new System.Drawing.Point(245, -4);
             this.ward.Name = "ward";
             this.ward.Size = new System.Drawing.Size(506, 271);
             this.ward.TabIndex = 13;

@@ -19,9 +19,10 @@ namespace HospitalManagementSystem
         public AdmitForm()
         {
             InitializeComponent();
+            make_p_id();
             make_comboBox();
             make_comboBox2();
-            make_p_id();
+          
         }
         private bool button2WasClicked = false;
         private void button3_Click(object sender, EventArgs e)
@@ -112,7 +113,7 @@ namespace HospitalManagementSystem
             OracleCommand cmddatabase = new OracleCommand(query, sv.thisConnection);
 
             OracleDataReader myReader = cmddatabase.ExecuteReader();
-           String Yes = "Yes";
+           string Yes = "Yes";
             string query2 = "SELECT * FROM patient_data where if_release_paid='"+Yes+ "'";
 
 
@@ -122,20 +123,27 @@ namespace HospitalManagementSystem
 
             try
             {
-
-                while (myReader.Read()&& myReader2.Read())
+                while (myReader.Read() && myReader2.Read())
                 {
-                    if (myReader["bed_free"].ToString() != "0") {
+                    if (myReader["bed_free"].ToString() != "0")
+                    {
                         if (myReader2["if_release_paid"].ToString() == "Yes")
                         {
                             p_id.Text = myReader2["p_id"].ToString();
                         }
-                        else
-                        {
-                            p_id.Text = myReader["empty_ward"].ToString() + myReader["bed_free"].ToString();
-                        }
+
                     }
                 }
+                while (myReader.Read())
+                {
+                    if (myReader["bed_free"].ToString() != "0")
+                    {
+
+                        p_id.Text = myReader["empty_ward"].ToString() + myReader["bed_free"].ToString();
+
+                    }
+                }
+            
 
 
             }

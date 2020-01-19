@@ -96,7 +96,7 @@ namespace HospitalManagementSystem
                     string newLine = Environment.NewLine;
                     string name = thisReader4["doc_name"].ToString();
                     string dep = thisReader4["department"].ToString();
-                    string des= thisReader4["designation"].ToString();
+                    string des= thisReader4["doc_des"].ToString();
                     string app = thisReader4["appointment_time"].ToString();
                     dp.Text = hhh+ newLine + name+ newLine + dep+" "+ des + newLine +"appointment time:"+ app+ newLine+"My Hospital";
                 }
