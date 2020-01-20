@@ -16,5 +16,27 @@ namespace HospitalManagementSystem
         {
             InitializeComponent();
         }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void employee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void service_Click(object sender, EventArgs e)
+        {
+            Form1 ob = new Form1();
+            ob.Show();
+            this.Hide();
+        }
     }
 }

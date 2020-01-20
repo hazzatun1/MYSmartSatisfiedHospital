@@ -236,6 +236,13 @@ namespace HospitalManagementSystem
         {
           
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            HomePage ob = new HomePage();
+            ob.Show();
+            this.Hide();
+        }
     }
     }
     
