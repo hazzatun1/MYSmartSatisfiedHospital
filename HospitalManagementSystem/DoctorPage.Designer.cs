@@ -207,7 +207,7 @@
             this.pres.Name = "pres";
             this.pres.Size = new System.Drawing.Size(462, 42);
             this.pres.TabIndex = 11;
-            this.pres.Text = "Prescription";
+            this.pres.Text = "Indoor Prescription";
             this.pres.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.pres.UseVisualStyleBackColor = true;
             this.pres.Click += new System.EventHandler(this.pres_Click);
