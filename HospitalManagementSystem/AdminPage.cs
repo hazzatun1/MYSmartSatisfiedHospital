@@ -23,7 +23,7 @@ namespace HospitalManagementSystem
        // static DateTime dt = new DateTime(2012, 12, 1, 10, 30, 50);
          static DateTime dt = DateTime.Today;
         static DateTime firstDay = new DateTime(dt.Year, dt.Month, 1);
-        bool dayOfFirstDay = Convert.ToBoolean(firstDay.DayOfWeek);
+     //   bool dayOfFirstDay = Convert.ToBoolean(firstDay.DayOfWeek);
         static DateTime dt6 = firstDay.AddMonths(+1);
 
 
@@ -32,7 +32,7 @@ namespace HospitalManagementSystem
         private void AdminPage_Load(object sender, EventArgs e)
         {
 
-            if (dayOfFirstDay)
+            if (firstDay==dt)
             {
 
                 textBox1.Text = "Today is Salary";

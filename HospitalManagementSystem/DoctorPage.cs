@@ -18,7 +18,7 @@ namespace HospitalManagementSystem
         static DateTime dt = DateTime.Today;
         static string da = DateTime.Now.ToString("dd/MM/yyyy");
         static DateTime firstDay = new DateTime(dt.Year, dt.Month, 1);
-        bool dayOfFirstDay = Convert.ToBoolean(firstDay.DayOfWeek);
+        //bool dayOfFirstDay = Convert.ToBoolean(firstDay.DayOfWeek);
         static DateTime dt6 = firstDay.AddMonths(+1);
         static string id_doc = "";
         static string name_doc = "";
@@ -28,6 +28,7 @@ namespace HospitalManagementSystem
         public DoctorPage()
         {
             InitializeComponent();
+           
         }
 
         public DoctorPage(string text)
@@ -45,7 +46,7 @@ namespace HospitalManagementSystem
       }*/
         private void DoctorPage_Load(object sender, EventArgs e)
         {
-            if (dayOfFirstDay)
+            if (firstDay == dt)
             {
 
                 textBox1.Text = "Today is Salary";
@@ -227,7 +228,7 @@ namespace HospitalManagementSystem
 
         private void pres_Click(object sender, EventArgs e)
         {
-            p_med ob = new p_med();
+            p_med ob = new p_med(name_doc);
             ob.Show();
             this.Hide();
         }

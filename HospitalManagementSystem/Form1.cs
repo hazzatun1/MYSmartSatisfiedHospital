@@ -51,7 +51,7 @@ namespace HospitalManagementSystem
                             pat.Show();
                             this.Hide();
                         }
-                  else  if (comboBox1.Text == "Receptionist" && thisReader["designation"].ToString() == "pco")
+                  else  if (comboBox1.Text == "Receptionist" && thisReader["designation"].ToString() == "receptionist")
                     {
                         PatientPage oform = new PatientPage();
                         oform.Show();

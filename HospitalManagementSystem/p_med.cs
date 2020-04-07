@@ -11,18 +11,56 @@ using System.Data.OracleClient;
 
 namespace HospitalManagementSystem
 {
-    public partial class p_med : Form
+    public partial class p_med : Form     
     {
+        static string d_name = "";
+
         public p_med()
         {
             InitializeComponent();
+
+        }
+        public p_med(string name_doc)
+             {
+            InitializeComponent();
+            d_name = name_doc;
+            make_comboBox();
+        }
+
+        public void make_comboBox()
+        {
+            connection sv = new connection();
+            sv.thisConnection.Open();
+            string query = "SELECT * FROM patient_data where REFDOCTOR = '" + d_name + "' ";
+
+
+            OracleCommand cmddatabase = new OracleCommand(query, sv.thisConnection);
+
+            OracleDataReader myReader = cmddatabase.ExecuteReader();
+
+            try
+            {
+
+                while (myReader.Read())
+                {
+
+                    comboBox1.Items.Add(myReader.GetString(myReader.GetOrdinal("p_id")));
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            sv.thisConnection.Close();
+
         }
 
 
-
-
-     static   DateTime tda = DateTime.Today;
+        static   DateTime tda = DateTime.Today;
         string td = tda.ToString();
+        private string un;
+
         private void button1_Click(object sender, EventArgs e)
         {
             DoctorPage ob = new DoctorPage();
@@ -55,7 +93,7 @@ namespace HospitalManagementSystem
             try
             {
 
-                thisRow["p_id"] = p_id.Text;
+                thisRow["p_id"] = comboBox1.Text;
                 thisRow["med"] = textBox1.Text;
                 thisRow["MORN_BE_FOOD"] = checkBox1.Text;
                 thisRow["MORN_AF_FOOD"] = checkBox2.Text;
@@ -126,5 +164,7 @@ namespace HospitalManagementSystem
         {
 
         }
+
+        
     }
 }

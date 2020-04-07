@@ -12,15 +12,21 @@ using System.Data.OracleClient;
 
 namespace HospitalManagementSystem
 {
+  
     public partial class nurse_page : Form
     {
+        String UserName;
         Timer t = new Timer();
         public nurse_page()
         {
             InitializeComponent();
             
         }
-    
+
+        public nurse_page(string text)
+        {
+            UserName = text;
+        }
 
         static DateTime da = DateTime.Now;
        static string today = da.ToString();
@@ -363,6 +369,11 @@ namespace HospitalManagementSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void mtime_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

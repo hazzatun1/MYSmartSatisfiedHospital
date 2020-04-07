@@ -124,6 +124,7 @@
             this.mtime.ReadOnly = true;
             this.mtime.Size = new System.Drawing.Size(338, 38);
             this.mtime.TabIndex = 9;
+            this.mtime.TextChanged += new System.EventHandler(this.mtime_TextChanged);
             // 
             // checkBox1
             // 
